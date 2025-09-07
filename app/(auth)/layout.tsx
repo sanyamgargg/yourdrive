@@ -10,9 +10,11 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         - 'flex-col justify-center' centers the content vertically.
       */}
       <section className='hidden lg:flex flex-col justify-center p-12 lg:w-2/5 xl:w-1/3 bg-card border-r border-border relative'>
-        <div className='space-y-4'>
+        <div className='space-y-1'>
           {/* The h1 will automatically pick up the gradient style from global.css */}
-          <h1 className='text-2xl text-accent uppercase'>Manage your files</h1>
+          
+          <p className='text-xl text-primary uppercase'>Manage your files with</p>
+          <h1 className='text-2xl'>YourDrive</h1>
           {/* The p tag will automatically pick up text-muted-foreground from global.css */}
           <p className='text-md leading-relaxed'>
             Welcome back. Sign in to access your dashboard and manage your account.

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 
 // An SVG icon for Google. You can replace this or add others (e.g., for GitHub, Apple).
@@ -12,6 +13,12 @@ const GoogleIcon = () => (
 
 
 const SignIn = () => {
+    const handleSubmit = (event : React.FormEvent<HTMLFormElement>) =>{
+            event.preventDefault() ;
+            const formData = new FormData(event.currentTarget) ;
+            const data = Object.fromEntries(formData.entries())
+            console.log(data) ;
+    }
   return (
     // Main container for the sign-in form.
     // The card styling (bg-card, border, shadow, padding) has been removed.
@@ -27,7 +34,7 @@ const SignIn = () => {
       </div>
 
       {/* ====== Form ====== */}
-      <form className='space-y-6'>
+      <form className='space-y-6' onSubmit={handleSubmit}>
         <div className='space-y-4'>
           {/* Email Input */}
           <div>
@@ -70,7 +77,7 @@ const SignIn = () => {
 
         {/* Login Button */}
         <div>
-          <button type="submit" className='w-full p-3 rounded-lg bg-primary text-primary-foreground font-bold'>
+          <button  type="submit" className='w-full p-3 rounded-lg bg-primary text-primary-foreground font-bold'>
             Sign In
           </button>
         </div>
